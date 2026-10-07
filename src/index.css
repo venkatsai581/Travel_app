@@ -4884,3 +4884,498 @@ a {
     padding-right: 15px;
   }
 }
+
+/* =========================================
+   DESTINATION IMAGE CARDS
+========================================= */
+
+.destinations-page {
+  animation: pageFadeIn 0.35s ease;
+}
+
+.destination-page-header {
+  align-items: center;
+}
+
+.destination-title-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.destination-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #4263eb;
+}
+
+.destination-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.destination-toolbar .search-bar {
+  max-width: 430px;
+  width: 100%;
+}
+
+.destination-count {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  border: 1px solid #e7eaf0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.destination-count svg {
+  color: #4263eb;
+}
+
+/* =========================================
+   DESTINATION GRID
+========================================= */
+
+.destination-card-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
+  gap: 20px;
+}
+
+.destination-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e7eaf0;
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow:
+    0 7px 20px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  border-color: #d9def0;
+  box-shadow:
+    0 16px 35px rgba(15, 23, 42, 0.10);
+}
+
+/* =========================================
+   DESTINATION IMAGE
+========================================= */
+
+.destination-image-wrapper {
+  position: relative;
+  height: 205px;
+  overflow: hidden;
+  background: #eef1f5;
+}
+
+.destination-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.55s ease,
+    filter 0.35s ease;
+}
+
+.destination-card:hover
+.destination-image {
+  transform: scale(1.07);
+  filter: saturate(1.08);
+}
+
+.destination-image-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0.18),
+      transparent 45%,
+      rgba(15, 23, 42, 0.62)
+    );
+}
+
+.destination-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  height: 100%;
+  color: #94a3b8;
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #f8fafc
+    );
+  font-size: 12px;
+}
+
+.destination-card-status {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  z-index: 2;
+}
+
+.destination-location {
+  position: absolute;
+  left: 15px;
+  bottom: 13px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: calc(100% - 30px);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.destination-location span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================
+   DESTINATION CARD CONTENT
+========================================= */
+
+.destination-card-content {
+  padding: 17px;
+}
+
+.destination-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.destination-card-heading h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.destination-card-heading span {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.destination-card-content > p {
+  display: -webkit-box;
+  min-height: 42px;
+  margin: 0 0 16px;
+  overflow: hidden;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.destination-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-top: 13px;
+  border-top: 1px solid #edf0f4;
+}
+
+.destination-card-actions .button {
+  flex: 1;
+}
+
+.destination-delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid #fee2e2;
+  border-radius: 9px;
+  background: #fff7f7;
+  color: #ef4444;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.destination-delete-button:hover {
+  border-color: #fecaca;
+  background: #fee2e2;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   DESTINATION FORM
+========================================= */
+
+.destination-form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.destination-form .form-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.destination-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.destination-form label {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.destination-form input,
+.destination-form textarea,
+.destination-form select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.destination-form textarea {
+  resize: vertical;
+  min-height: 95px;
+}
+
+.destination-form input:focus,
+.destination-form textarea:focus,
+.destination-form select:focus {
+  border-color: #4263eb;
+  box-shadow:
+    0 0 0 3px rgba(
+      66,
+      99,
+      235,
+      0.10
+    );
+}
+
+.destination-form input::placeholder,
+.destination-form textarea::placeholder {
+  color: #b0b8c5;
+}
+
+.form-help {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.form-error {
+  color: #ef4444;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.destination-form-preview {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 11px;
+  border: 1px solid #e7eaf0;
+  background: #f8fafc;
+}
+
+.destination-form-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   DESTINATION VIEW MODAL
+========================================= */
+
+.destination-view {
+  overflow: hidden;
+  border: 1px solid #e7eaf0;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.destination-view-image {
+  height: 230px;
+  overflow: hidden;
+  background: #eef1f5;
+}
+
+.destination-view-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.destination-view-image svg {
+  display: block;
+  margin: 90px auto;
+  color: #94a3b8;
+}
+
+.destination-view-content {
+  padding: 18px;
+}
+
+.destination-view-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.destination-view-title h3 {
+  margin: 0 0 5px;
+  color: #172033;
+  font-size: 20px;
+}
+
+.destination-view-title span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.destination-view-content > p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .destination-card-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .destination-page-header {
+    align-items: flex-start;
+  }
+
+  .destination-page-header .button {
+    width: 100%;
+  }
+
+  .destination-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .destination-toolbar .search-bar {
+    max-width: none;
+  }
+
+  .destination-count {
+    justify-content: center;
+  }
+
+  .destination-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .destination-title-row {
+    align-items: flex-start;
+  }
+
+  .destination-title-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .destination-image-wrapper {
+    height: 190px;
+  }
+
+  .destination-card-content {
+    padding: 15px;
+  }
+
+  .destination-card-actions {
+    gap: 6px;
+  }
+
+  .destination-card-actions .button {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .destination-view-image {
+    height: 190px;
+  }
+}

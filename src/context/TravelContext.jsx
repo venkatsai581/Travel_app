@@ -7,10 +7,6 @@ import {
 const TravelContext =
   createContext(null);
 
-/* =========================================
-   INITIAL DESTINATIONS
-========================================= */
-
 const initialDestinations = [
   {
     id: 1,
@@ -18,7 +14,8 @@ const initialDestinations = [
     country: "United Arab Emirates",
     description:
       "Luxury shopping, desert adventures and modern attractions.",
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85",
     status: "Active"
   },
   {
@@ -27,7 +24,8 @@ const initialDestinations = [
     country: "Indonesia",
     description:
       "Beautiful beaches, temples and relaxing island experiences.",
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85",
     status: "Active"
   },
   {
@@ -36,7 +34,8 @@ const initialDestinations = [
     country: "France",
     description:
       "Iconic landmarks, art, culture and fine dining.",
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=85",
     status: "Active"
   },
   {
@@ -45,7 +44,8 @@ const initialDestinations = [
     country: "Maldives",
     description:
       "Tropical beaches, luxury resorts and island experiences.",
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85",
     status: "Active"
   },
   {
@@ -54,7 +54,8 @@ const initialDestinations = [
     country: "Singapore",
     description:
       "Modern attractions, shopping and family experiences.",
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=85",
     status: "Active"
   },
   {
@@ -63,14 +64,11 @@ const initialDestinations = [
     country: "Switzerland",
     description:
       "Mountain scenery, lakes and scenic train journeys.",
-    image: "",
+    image:
+      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=900&q=85",
     status: "Active"
   }
 ];
-
-/* =========================================
-   INITIAL TRIPS
-========================================= */
 
 const initialTrips = [
   {
@@ -135,10 +133,6 @@ const initialTrips = [
   }
 ];
 
-/* =========================================
-   INITIAL CUSTOMERS
-========================================= */
-
 const initialCustomers = [
   {
     id: 1,
@@ -189,10 +183,6 @@ const initialCustomers = [
     status: "Active"
   }
 ];
-
-/* =========================================
-   INITIAL BOOKINGS
-========================================= */
 
 const initialBookings = [
   {
@@ -262,10 +252,6 @@ const initialBookings = [
   }
 ];
 
-/* =========================================
-   INITIAL PAYMENTS
-========================================= */
-
 const initialPayments = [
   {
     id: 1,
@@ -317,10 +303,6 @@ const initialPayments = [
   }
 ];
 
-/* =========================================
-   PROVIDER
-========================================= */
-
 export function TravelProvider({
   children
 }) {
@@ -348,10 +330,6 @@ export function TravelProvider({
     payments,
     setPayments
   ] = useState(initialPayments);
-
-  /* =====================================
-     DESTINATIONS
-  ===================================== */
 
   const addDestination = (data) => {
     setDestinations((current) => [
@@ -387,10 +365,6 @@ export function TravelProvider({
     );
   };
 
-  /* =====================================
-     TRIPS
-  ===================================== */
-
   const addTrip = (data) => {
     setTrips((current) => [
       ...current,
@@ -425,10 +399,6 @@ export function TravelProvider({
     );
   };
 
-  /* =====================================
-     CUSTOMERS
-  ===================================== */
-
   const addCustomer = (data) => {
     setCustomers((current) => [
       ...current,
@@ -462,10 +432,6 @@ export function TravelProvider({
       )
     );
   };
-
-  /* =====================================
-     BOOKINGS
-  ===================================== */
 
   const addBooking = (data) => {
     setBookings((current) => [
@@ -505,10 +471,6 @@ export function TravelProvider({
       )
     );
   };
-
-  /* =====================================
-     PAYMENTS
-  ===================================== */
 
   const addPayment = (data) => {
     setPayments((current) => [
@@ -583,10 +545,6 @@ export function TravelProvider({
     </TravelContext.Provider>
   );
 }
-
-/* =========================================
-   HOOK
-========================================= */
 
 export function useTravel() {
   const context =
